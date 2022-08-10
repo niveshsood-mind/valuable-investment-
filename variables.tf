@@ -1,15 +1,16 @@
-terraform {
-
-  required_version = ">=0.12"
-
-  required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-      version = "~>2.0"
-    }
-  }
+variable "azure_location" {
+    type = string
+    description = "The location for deployment"
+    default = "Central-US" 
 }
 
-provider "azurerm" {
-  features {}
+ variable "rsgname" {
+    type = string
+    description = "Resource Group name" 
+    default = "TerraformRG"
+}
+
+variable "stgactname" {
+    type = string
+    description = "Storage Account name"
 }
